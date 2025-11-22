@@ -9,5 +9,7 @@ img {
 .container div {
   text-align: center;
   border-colour: green;
+  padding: 10px;
+  border: 1px solid black;
 }
 
