@@ -1,18 +1,44 @@
-<style>
-button {
-border-radius: 4px;
-color: sky-blue;
-}
-</style>
-<form>
-<input type="“text” id="subdomain" placeholder="U’re subdomain here"><br>
-<input type="“text” id="username" placeholder="Discord username"><br> 
-<p>What subscription would you like?</p>
-<select>
-  <option>EZ Free</option>  
-  <option>EZ Basic</option>
-  <option>EZ Pro</option>
-  <option>EZ Ultimate</option>
-</select><br>
-<button type="“submit”">Confirm</button>
+<form id="dcForm">
+    <input type="text" id="subdomain" placeholder="Your subdomain here" required><br>
+    <input type="text" id="username" placeholder="Discord username" required><br>
+
+    <p>What subscription would you like?</p>
+    <select id="subscription" required>
+        <option>EZ Free</option>
+        <option>EZ Basic</option>
+        <option>EZ Pro</option>
+        <option>EZ Ultimate</option>
+    </select><br>
+
+    <button type="submit">Confirm</button>
 </form>
+
+<script>
+document.getElementById("dcForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const subdomain = document.getElementById("subdomain").value;
+    const username = document.getElementById("username").value;
+    const subscription = document.getElementById("subscription").value;
+  
+    const webhookURL = "WEBHOOK";
+
+    const payload = {
+        content: `**New Subdomain Submission**
+        
+**Subdomain:** ${subdomain}
+**Discord Username:** ${username}
+**Subscription:** ${subscription}`
+    };
+
+    fetch(webhookURL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    })
+    .then(() => alert("Verstuurd naar Discord!"))
+    .catch(err => alert("Error: " + err));
+});
+</script>
