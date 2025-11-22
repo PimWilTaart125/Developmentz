@@ -1,3 +1,11 @@
 img {
   border-radius: 10px;
 }
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.container div {
+  text-align: center
+}
+
