@@ -12,9 +12,50 @@
       <h1>Developementz</h1>
     </header>
       <div class="mid">
-        <div id="top"></div>
-        <div id="mid"></div>
-        <div id="bottom"></div>
+        <form id="dcForm">
+          <input type="text" id="subdomain" placeholder="Your subdomain.developmentz.site" required><br>
+          <input type="text" id="username" placeholder="Discord username" required><br>
+
+          <p>What subscription would you like?</p>
+          <select id="subscription" required>
+            <option>EZ Free</option>
+            <option>EZ Basic</option>
+            <option>EZ Pro</option>
+            <option>EZ Ultimate</option>
+          </select><br>
+
+          <button type="submit">Confirm</button>
+        </form>
+
+        <script>
+          document.getElementById("dcForm").addEventListener("submit", function(e) {
+          e.preventDefault();
+
+            const subdomain = document.getElementById("subdomain").value;
+            const username = document.getElementById("username").value;
+            const subscription = document.getElementById("subscription").value;
+  
+            const webhookURL = "https://discord.com/api/webhooks/1441816875339087902/7r-7lgsdKr3JeviD1tFalVPUJX1uzIN7TzXvY1fzKtLWYiq9wOo_T_lfUF1EiLV2scjB";
+
+            const payload = {
+              content: `**New Subdomain Submission**
+              **Subdomain:** ${subdomain}
+              **Discord Username:** ${username}
+              **Subscription:** ${subscription}
+              @everyone`
+            };
+
+            fetch(webhookURL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(payload)
+            })
+            .then(() => alert("We recieved you're request!"))
+            .catch(err => alert("Error: " + err));
+          });
+        </script>
       </div>
     <footer>
       <h3>
