@@ -6,8 +6,10 @@ img {
   grid-template-rows: auto auto auto;
   padding: 0px;
 }
-.container header footer {
+header footer {
   text-align: center;
   padding: 10px;
+  background-color: sky-blue;
+  border: 2px solid navy-blue;
 }
 
