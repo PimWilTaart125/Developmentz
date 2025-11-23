@@ -24,3 +24,8 @@
   background-color: skyblue;
   font-family: "Science Gothic", sans-serif, serif;
 }
+.container mid input {
+  width: auto;
+  margin: 5px 25px 5px 25px;
+  height: 35px;
+}
