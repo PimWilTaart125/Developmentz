@@ -6,7 +6,7 @@ img {
   grid-template-rows: auto auto auto;
   padding: 0px;
 }
-.container div {
+.container header footer {
   text-align: center;
   padding: 10px;
 }
