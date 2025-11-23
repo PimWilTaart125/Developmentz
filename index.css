@@ -52,7 +52,7 @@ input {
   font-family: "Science Gothic", sans-serif, serif;
 }
 input {
-  width: calc(100% - 25px);
+  width: calc(100% - 50px);
   margin: 5px 25px 5px 25px;
   height: 30%;
   text-align: center;
