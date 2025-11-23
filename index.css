@@ -10,9 +10,6 @@
     "CTRS" 0;
 }
 
-img {
-  border-radius: 10px;
-}
 .container {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -20,6 +17,7 @@ img {
 }
 
 header, footer {
+  border-radius: 7px;
   text-align: center;
   padding: 10px;
   background-color: skyblue;
